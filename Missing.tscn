@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ded2mvl2t0dpb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7mp0w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sr571"]
+noise = SubResource("FastNoiseLite_7mp0w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inqul"]
+albedo_texture = SubResource("NoiseTexture2D_sr571")
+
+[node name="Node3D" type="CSGBox3D"]
+material_override = SubResource("StandardMaterial3D_inqul")
+size = Vector3(3.99316, 1, 8.43848)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02935, 0.587893, 1.78969)
+operation = 2
+size = Vector3(0.499023, 0.532227, 1.39477)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.772, 2.5)
+operation = 2
+size = Vector3(1.37793, 1.06641, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.908891, 0.287847, -0.301763, 0, 0.723594, 0.690226, 0.417034, 0.62734, -0.657668, 0.747703, 0.603355, 2.38947)
